@@ -16,7 +16,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'worldskills_s3';
     protected $appVersionRequired = '5.7.5.3';
-    protected $pkgVersion = '0.0.1';
+    protected $pkgVersion = '0.0.2';
     protected $pkgAutoloaderMapCoreExtensions = true;
 
     public function getPackageName()
