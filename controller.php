@@ -33,23 +33,6 @@ class Controller extends Package
     {
         $pkg = parent::install();
 
-        $this->configurePackage($pkg);
-    }
-
-    public function upgrade()
-    {
-        parent::upgrade();
-
-        $pkg = \Package::getByHandle($this->pkgHandle);
-        $this->configurePackage($pkg);
-    }
-
-    public function configurePackage($pkg)
-    {
-        // add storage location
-        $storageLocationType = StorageLocationType::getByHandle('worldskills_s3');
-        if (!is_object($storageLocationType)) {
-            \Concrete\Core\File\StorageLocation\Type\Type::add('worldskills_s3', 'S3', $pkg);
-        }
+        \Concrete\Core\File\StorageLocation\Type\Type::add('worldskills_s3', 'S3', $pkg);
     }
 }
