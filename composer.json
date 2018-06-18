@@ -1,0 +1,12 @@
+{
+    "name": "worldskills/concrete5-worldskills-s3",
+    "license": "MIT",
+    "type": "concrete5-package",
+    "require": {
+        "composer/installers": "~1.0",
+        "league/flysystem-aws-s3-v3": "^1.0"
+    },
+    "extra": {
+        "installer-name": "worldskills_s3"
+    }
+}
