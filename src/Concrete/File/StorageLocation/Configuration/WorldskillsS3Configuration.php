@@ -31,7 +31,12 @@ class WorldskillsS3Configuration extends Configuration implements ConfigurationI
 
     public function getAdapter()
     {
-        $client = new S3Client([]);
+        $region = \Config::get('worldskills_s3.region', 'us-east-1');
+        $client = new S3Client([
+            'version' => 'latest',
+            'region' => $region,
+        ]);
+
         $bucket = \Config::get('worldskills_s3.bucket');
 
         return new AwsS3Adapter($client, $bucket);
