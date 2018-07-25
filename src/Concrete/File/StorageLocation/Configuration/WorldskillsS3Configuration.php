@@ -4,10 +4,11 @@ namespace Concrete\Package\WorldskillsS3\File\StorageLocation\Configuration;
 
 use \Concrete\Core\File\StorageLocation\Configuration\ConfigurationInterface;
 use \Concrete\Core\File\StorageLocation\Configuration\Configuration;
+use \Concrete\Core\File\StorageLocation\Configuration\DeferredConfigurationInterface;
 use \Aws\S3\S3Client;
 use \League\Flysystem\AwsS3v3\AwsS3Adapter;
 
-class WorldskillsS3Configuration extends Configuration implements ConfigurationInterface
+class WorldskillsS3Configuration extends Configuration implements ConfigurationInterface, DeferredConfigurationInterface
 {
     public function hasPublicURL()
     {
